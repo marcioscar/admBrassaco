@@ -70,6 +70,14 @@ def df_rec():
     df_rec.sort_values(by='data', ascending=False, inplace=True)
     return df_rec
 
+def df_estoque():
+    db = conexao()
+    estoque = db["estoque"]
+    data_estoque = estoque.find()
+    df_estoque =  pd.DataFrame(list(data_estoque)) 
+    df_estoque.sort_values(by='data', ascending=False, inplace=True)
+    return df_estoque
+
 def df_compras():
     db = conexao()
     compras = db["compras"]

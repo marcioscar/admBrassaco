@@ -47,7 +47,7 @@ def editar(id, nf, valor, fornecedor,data):
             fornecedor = st.selectbox("Fornecedor", options=compras["fornecedor"].unique(), index=conta_index)
             valor = st.number_input("Valor", value=float(valor.replace('R$', '').replace('.', '').replace(',', '.')))
         with col2:
-            nf = st.text_input("NF", value=nf)
+            nf = st.number_input("NF", value=nf)
             data = datetime.combine(st.date_input('Data', value=data, format="DD/MM/YYYY"), datetime.min.time())
         submitted = st.form_submit_button("Salvar")
         if submitted:
